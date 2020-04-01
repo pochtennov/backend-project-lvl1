@@ -8,7 +8,7 @@ const isEven = (number) => (number % 2 === 0);
 const playIsEven = () => {
   const questionValue = getRandomNumber(upperRangeBoundary);
   const correctAnswer = isEven(questionValue) ? 'yes' : 'no';
-  return [questionValue, correctAnswer, questionPhrase];
+  return [questionValue, correctAnswer];
 };
 
-export default playIsEven;
+export default () => [playIsEven, questionPhrase];

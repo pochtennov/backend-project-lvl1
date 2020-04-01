@@ -1,13 +1,15 @@
-import playCalc from './games/calcGame.js';
-import playIsEven from './games/isEvenGame.js';
-import playGcd from './games/gcdGame.js';
-import playProgression from './games/progressionGame.js';
+import calcGame from './games/calcGame.js';
+import isEvenGame from './games/isEvenGame.js';
+import gcdGame from './games/gcdGame.js';
+import progressionGame from './games/progressionGame.js';
+import isPrimeGame from './games/isPrimeGame.js';
 
 const gamePicker = {
-  'brain-even': playIsEven,
-  'brain-calc': playCalc,
-  'brain-gcd': playGcd,
-  'brain-progression': playProgression,
+  'brain-even': isEvenGame,
+  'brain-calc': calcGame,
+  'brain-gcd': gcdGame,
+  'brain-progression': progressionGame,
+  'brain-prime': isPrimeGame,
 };
 
 export default (gameType) => gamePicker[gameType];

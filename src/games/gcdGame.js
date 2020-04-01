@@ -15,7 +15,7 @@ const playGcd = () => {
   const secondNumber = getRandomNumber(upperRangeBoundary);
   const questionValue = `${firstNumber} ${secondNumber}`;
   const correctAnswer = `${findGcd(firstNumber, secondNumber)}`;
-  return [questionValue, correctAnswer, questionPhrase];
+  return [questionValue, correctAnswer];
 };
 
-export default playGcd;
+export default () => [playGcd, questionPhrase];

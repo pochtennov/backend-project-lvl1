@@ -21,7 +21,7 @@ const playProgression = () => {
   const questionValue = progression
     .reduce((acc, el, index) => (index !== emptyIndex ? `${acc} ${el}` : `${acc} ...`), '');
   const correctAnswer = `${progression[emptyIndex]}`;
-  return [questionValue, correctAnswer, questionPhrase];
+  return [questionValue, correctAnswer];
 };
 
-export default playProgression;
+export default () => [playProgression, questionPhrase];

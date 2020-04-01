@@ -21,7 +21,7 @@ const playCalc = () => {
   const sign = signs[signIndex];
   const questionValue = `${firstNumber} ${sign} ${secondNumber}`;
   const correctAnswer = `${getCorrectAnswer(sign, firstNumber, secondNumber)}`;
-  return [questionValue, correctAnswer, questionPhrase];
+  return [questionValue, correctAnswer];
 };
 
-export default playCalc;
+export default () => [playCalc, questionPhrase];
