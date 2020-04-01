@@ -19,6 +19,14 @@ npm install brain-games-backend-1
 * brain-prime - guess that a number is prime or not
 * brain-progression - find a missing element in progression
 
-### Example of the game process
+### Examples of the game process
 
-[![asciicast](https://asciinema.org/a/SD2l47dEMnVcasEa3MVajdnZ0.svg)](https://asciinema.org/a/SD2l47dEMnVcasEa3MVajdnZ0)
+[![asciicast](https://asciinema.org/a/gqMezmk94HBbdCHNhAZtYEUrO.svg)](https://asciinema.org/a/gqMezmk94HBbdCHNhAZtYEUrO)
+
+[![asciicast](https://asciinema.org/a/qtZRBXm33QOTRGvnfooDzixUp.svg)](https://asciinema.org/a/qtZRBXm33QOTRGvnfooDzixUp)
+
+[![asciicast](https://asciinema.org/a/2NoTQEnmcDEPWdC4oGDhs3W1d.svg)](https://asciinema.org/a/2NoTQEnmcDEPWdC4oGDhs3W1d)
+
+[![asciicast](https://asciinema.org/a/ooDmbpODdW0FxoOEzDvwmozc0.svg)](https://asciinema.org/a/ooDmbpODdW0FxoOEzDvwmozc0)
+
+[![asciicast](https://asciinema.org/a/oqvU7dEe9KzDVcB7OSx3xgMrL.svg)](https://asciinema.org/a/oqvU7dEe9KzDVcB7OSx3xgMrL)
