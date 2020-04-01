@@ -6,8 +6,8 @@ const gameEngine = (gameType) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}`);
-  const game = gamePicker(gameType); 
-  const [,,questionPhrase] = game();
+  const game = gamePicker(gameType);
+  const [,, questionPhrase] = game();
   console.log(questionPhrase);
 
   for (let i = 0; i < 3; i += 1) {
