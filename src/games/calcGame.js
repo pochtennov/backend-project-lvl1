@@ -1,9 +1,9 @@
+import getRandomNumber from '../utils/randomValueFromRange.js';
+
 const upperRangeBoundary = 200;
 const signRangeBoundary = 2;
 const questionPhrase = 'What is the result of the expression?';
 const signs = ['+', '-', '*'];
-
-const getRandomNumber = (range) => Math.floor(Math.random() * range);
 
 const getCorrectAnswer = (sign, number1, number2) => {
   switch (sign) {

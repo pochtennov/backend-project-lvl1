@@ -1,7 +1,7 @@
+import getRandomNumber from '../utils/randomValueFromRange.js';
+
 const upperRangeBoundary = 200;
 const questionPhrase = 'Find the greatest common divisor of given numbers.';
-
-const getRandomNumber = (range) => Math.floor(Math.random() * range);
 
 const findGcd = (number1, number2) => {
   if (number2 === 0) {
