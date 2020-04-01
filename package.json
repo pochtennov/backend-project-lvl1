@@ -1,0 +1,23 @@
+{
+  "name": "brain-games-backend-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pochtennov/backend-project-lvl1.git"
+  },
+  "author": "Dmitrii Pochtennov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pochtennov/backend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/pochtennov/backend-project-lvl1#readme"
+}
