@@ -1,31 +1,33 @@
 import readlineSync from 'readline-sync';
+import gamePicker from './gamePicker.js';
 
-const isEven = (number) => (number % 2 === 0);
 
-const isEvenGame = () => {
+const gameEngine = (gameType) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  const upperRangeBoundary = 100;
+  const game = gamePicker(gameType); 
+  const [,,questionPhrase] = game();
+  console.log(questionPhrase);
+
   for (let i = 0; i < 3; i += 1) {
-    const numberForQuestion = Math.floor(Math.random() * upperRangeBoundary);
-    console.log(`Question: ${numberForQuestion}`);
+    const [questionValue, correctAnswer] = game();
+    console.log(`Question: ${questionValue}`);
     const userInput = readlineSync.question('Your answer: ');
-    const correctAnswer = isEven(numberForQuestion) ? 'yes' : 'no';
     if (correctAnswer !== userInput) {
       console.log(`"${userInput}" is wrong answer ;(. Correct answer was "${correctAnswer}"`);
       console.log(`Let's try again, ${name}`);
       return;
     }
+    console.log('Correct!');
   }
   console.log(`Congratulations, ${name}`);
 };
 
-const greet = () => {
+const greetUser = () => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}`);
 };
 
-export { greet, isEvenGame };
+export { greetUser, gameEngine };
