@@ -1,7 +1,9 @@
 import getRandomNumber from '../utils/randomValueFromRange.js';
+import gameEngine from '../index.js';
 
 const upperRangeBoundary = 200;
-const questionPhrase = 'Find the greatest common divisor of given numbers.';
+const bottomRangeBoundary = 0;
+const task = 'Find the greatest common divisor of given numbers.';
 
 const findGcd = (number1, number2) => {
   if (number2 === 0) {
@@ -11,11 +13,11 @@ const findGcd = (number1, number2) => {
 };
 
 const playGcd = () => {
-  const firstNumber = getRandomNumber(upperRangeBoundary);
-  const secondNumber = getRandomNumber(upperRangeBoundary);
-  const questionValue = `${firstNumber} ${secondNumber}`;
+  const firstNumber = getRandomNumber(bottomRangeBoundary, upperRangeBoundary);
+  const secondNumber = getRandomNumber(bottomRangeBoundary, upperRangeBoundary);
+  const question = `${firstNumber} ${secondNumber}`;
   const correctAnswer = `${findGcd(firstNumber, secondNumber)}`;
-  return [questionValue, correctAnswer];
+  return [question, correctAnswer];
 };
 
-export default () => [playGcd, questionPhrase];
+export default () => gameEngine(playGcd, task);

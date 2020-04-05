@@ -1,17 +1,16 @@
 import readlineSync from 'readline-sync';
-import gamePicker from './gamePicker.js';
 
+const roundsPerGame = 3;
 
-const gameEngine = (gameType) => {
+const gameEngine = (game, task) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}`);
-  const [game, questionPhrase] = gamePicker(gameType)();
-  console.log(questionPhrase);
+  console.log(task);
 
-  for (let i = 0; i < 3; i += 1) {
-    const [questionValue, correctAnswer] = game();
-    console.log(`Question: ${questionValue}`);
+  for (let round = 1; round <= roundsPerGame; round += 1) {
+    const [question, correctAnswer] = game();
+    console.log(`Question: ${question}`);
     const userInput = readlineSync.question('Your answer: ');
     if (correctAnswer !== userInput) {
       console.log(`"${userInput}" is wrong answer ;(. Correct answer was "${correctAnswer}"`);
@@ -23,10 +22,4 @@ const gameEngine = (gameType) => {
   console.log(`Congratulations, ${name}`);
 };
 
-const greetUser = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}`);
-};
-
-export { greetUser, gameEngine };
+export default gameEngine;

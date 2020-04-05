@@ -1,12 +1,15 @@
 import getRandomNumber from '../utils/randomValueFromRange.js';
+import gameEngine from '../index.js';
 
 const upperRangeBoundary = 160;
+const bottomRangeBoundary = 0;
+const minProgrStep = 0;
 const maxProgrStep = 10;
 const progrLength = 10;
-const questionPhrase = 'What number is missing in the progression?';
+const task = 'What number is missing in the progression?';
 
-const generateProgression = (initialNumber, progressionLength, maxProgressionStep) => {
-  const progressionStep = getRandomNumber(maxProgressionStep);
+const generateProgression = (initialNumber, progressionLength, minProgrStep, maxProgrStep) => {
+  const progressionStep = getRandomNumber(minProgrStep, maxProgrStep);
   const progression = [];
   for (let i = 0; i < progressionLength; i += 1) {
     progression[i] = initialNumber + progressionStep * i;
@@ -15,13 +18,13 @@ const generateProgression = (initialNumber, progressionLength, maxProgressionSte
 };
 
 const playProgression = () => {
-  const initialProgressionNumber = getRandomNumber(upperRangeBoundary);
-  const progression = generateProgression(initialProgressionNumber, progrLength, maxProgrStep);
-  const emptyIndex = getRandomNumber(progrLength - 1);
-  const questionValue = progression
+  const initialProgressionNumber = getRandomNumber(bottomRangeBoundary, upperRangeBoundary);
+  const progression = generateProgression(initialProgressionNumber, progrLength, minProgrStep, maxProgrStep);
+  const emptyIndex = getRandomNumber(0, progrLength - 1);
+  const question = progression
     .reduce((acc, el, index) => (index !== emptyIndex ? `${acc} ${el}` : `${acc} ...`), '');
   const correctAnswer = `${progression[emptyIndex]}`;
-  return [questionValue, correctAnswer];
+  return [question, correctAnswer];
 };
 
-export default () => [playProgression, questionPhrase];
+export default () => gameEngine(playProgression, task);
