@@ -1,8 +1,6 @@
 import getRandomNumber from '../utils/randomValueFromRange.js';
 import gameEngine from '../index.js';
 
-const upperRangeBoundary = 100;
-const bottomRangeBoundary = 0;
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
 const isPrime = (number) => {
@@ -19,7 +17,7 @@ const isPrime = (number) => {
 };
 
 const playIsPrime = () => {
-  const question = getRandomNumber(bottomRangeBoundary, upperRangeBoundary);
+  const question = getRandomNumber(1, 100);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
   return [question, correctAnswer];
 };
