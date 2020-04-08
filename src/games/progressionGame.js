@@ -15,8 +15,8 @@ const generateProgression = (firstTerm, termsCount, maxDiff) => {
 };
 
 const genGameData = () => {
-  const firstProgressionTerm = getRandomNumber(0, 160);
-  const progression = generateProgression(firstProgressionTerm, progressionTermsCount, maxDifference);
+  const firstProgrTerm = getRandomNumber(0, 160);
+  const progression = generateProgression(firstProgrTerm, progressionTermsCount, maxDifference);
   const emptyIndex = getRandomNumber(0, progressionTermsCount - 1);
   const question = progression
     .reduce((acc, el, index) => (index !== emptyIndex ? `${acc} ${el}` : `${acc} ...`), '');
