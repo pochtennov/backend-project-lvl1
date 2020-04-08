@@ -1,6 +1,6 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/428dbfff0c5d41878bcd/maintainability)](https://codeclimate.com/github/pochtennov/backend-project-lvl1/maintainability)
 
-![Node.js CI](https://github.com/pochtennov/backend-project-lvl1/workflows/Node.js%20CI/badge.svg)
+[![Node.js CI](https://github.com/pochtennov/backend-project-lvl1/workflows/Node.js%20CI/badge.svg)](https://github.com/pochtennov/backend-project-lvl1/actions?query=workflow%3A%22Node.js+CI%22)
 
 
 *сразу оговорюсь, что первые два проекта в профессии я делал на другом аккаунте года 1.5 - 2 назад. Их можно найти в этом же гитхаб аккаунте в brain-games и gen-diff репозиториях. Было интересно как они изменились и хочется получить сертификаты по профессиям для нынешнего аккаунта. Со всей ответственностью заявляю, что в свои проекты 2-летней давности не смотрел и никакие другие тоже*
