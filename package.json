@@ -20,6 +20,11 @@
     "url": "git+https://github.com/pochtennov/backend-project-lvl1.git"
   },
   "author": "Dmitrii Pochtennov",
+  "keywords": [
+    "hexlet",
+    "games",
+    "project"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/pochtennov/backend-project-lvl1/issues"

@@ -2,25 +2,25 @@ import getRandomNumber from '../utils/randomValueFromRange.js';
 import gameEngine from '../index.js';
 
 const task = 'What is the result of the expression?';
-const operations = ['+', '-', '*'];
+const operators = ['+', '-', '*'];
 
-const getResultOfOperation = (operation, number1, number2) => {
-  switch (operation) {
+const getResultOfOperation = (operator, number1, number2) => {
+  switch (operator) {
     case '-': return number1 - number2;
     case '+': return number1 + number2;
     case '*': return number1 * number2;
-    default: throw new Error('Operation is not supported');
+    default: throw new Error('Operator is not supported');
   }
 };
 
-const playCalc = () => {
+const genGameData = () => {
   const firstNumber = getRandomNumber(0, 200);
   const secondNumber = getRandomNumber(0, 200);
-  const operationIndex = getRandomNumber(0, 2);
-  const operation = operations[operationIndex];
-  const question = `${firstNumber} ${operation} ${secondNumber}`;
-  const correctAnswer = `${getResultOfOperation(operation, firstNumber, secondNumber)}`;
+  const operationIndex = getRandomNumber(0, operators.length - 1);
+  const operator = operators[operationIndex];
+  const question = `${firstNumber} ${operator} ${secondNumber}`;
+  const correctAnswer = getResultOfOperation(operator, firstNumber, secondNumber).toString();
   return [question, correctAnswer];
 };
 
-export default () => gameEngine(playCalc, task);
+export default () => gameEngine(genGameData, task);

@@ -10,12 +10,12 @@ const findGcd = (number1, number2) => {
   return findGcd(number2, (number1 % number2));
 };
 
-const playGcd = () => {
+const genGameData = () => {
   const firstNumber = getRandomNumber(0, 200);
   const secondNumber = getRandomNumber(0, 200);
   const question = `${firstNumber} ${secondNumber}`;
-  const correctAnswer = `${findGcd(firstNumber, secondNumber)}`;
+  const correctAnswer = findGcd(firstNumber, secondNumber).toString();
   return [question, correctAnswer];
 };
 
-export default () => gameEngine(playGcd, task);
+export default () => gameEngine(genGameData, task);

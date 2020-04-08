@@ -16,10 +16,10 @@ const isPrime = (number) => {
   return true;
 };
 
-const playIsPrime = () => {
+const genGameData = () => {
   const question = getRandomNumber(1, 100);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
-  return [question, correctAnswer];
+  return [question.toString(), correctAnswer];
 };
 
-export default () => gameEngine(playIsPrime, task);
+export default () => gameEngine(genGameData, task);
