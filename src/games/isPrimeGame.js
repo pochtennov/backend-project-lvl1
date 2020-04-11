@@ -1,5 +1,5 @@
 import getRandomNumber from '../utils/randomValueFromRange.js';
-import gameEngine from '../index.js';
+import runGameEngine from '../index.js';
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
@@ -22,4 +22,4 @@ const genGameData = () => {
   return [question.toString(), correctAnswer];
 };
 
-export default () => gameEngine(genGameData, task);
+export default () => runGameEngine(genGameData, task);

@@ -1,27 +1,27 @@
 import getRandomNumber from '../utils/randomValueFromRange.js';
-import gameEngine from '../index.js';
+import runGameEngine from '../index.js';
 
 const maxDifference = 10;
-const progressionTermsCount = 10;
+const progressionLength = 10;
 const task = 'What number is missing in the progression?';
 
-const generateProgression = (firstTerm, termsCount, maxDiff) => {
-  const difference = getRandomNumber(0, maxDiff);
+const generateProgression = (firstMember, progressionLength, difference) => {
   const progression = [];
-  for (let i = 0; i < termsCount; i += 1) {
-    progression[i] = firstTerm + difference * i;
+  for (let i = 0; i < progressionLength; i += 1) {
+    progression[i] = firstMember + difference * i;
   }
   return progression;
 };
 
 const genGameData = () => {
-  const firstProgrTerm = getRandomNumber(0, 160);
-  const progression = generateProgression(firstProgrTerm, progressionTermsCount, maxDifference);
-  const emptyIndex = getRandomNumber(0, progressionTermsCount - 1);
-  const question = progression
-    .reduce((acc, el, index) => (index !== emptyIndex ? `${acc} ${el}` : `${acc} ...`), '');
-  const correctAnswer = progression[emptyIndex].toString();
+  const firstMember = getRandomNumber(0, 160);
+  const difference = getRandomNumber(0, maxDifference);
+  const progression = generateProgression(firstMember, progressionLength, difference);
+  const hiddenElIndex = getRandomNumber(0, progressionLength - 1);
+  const correctAnswer = progression[hiddenElIndex].toString();
+  progression[hiddenElIndex] = '...';
+  const question = progression.join(' ');
   return [question, correctAnswer];
 };
 
-export default () => gameEngine(genGameData, task);
+export default () => runGameEngine(genGameData, task);

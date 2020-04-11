@@ -1,5 +1,5 @@
 import getRandomNumber from '../utils/randomValueFromRange.js';
-import gameEngine from '../index.js';
+import runGameEngine from '../index.js';
 
 const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -11,4 +11,4 @@ const genGameData = () => {
   return [question.toString(), correctAnswer];
 };
 
-export default () => gameEngine(genGameData, task);
+export default () => runGameEngine(genGameData, task);

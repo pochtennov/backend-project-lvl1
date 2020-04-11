@@ -1,10 +1,10 @@
 import getRandomNumber from '../utils/randomValueFromRange.js';
-import gameEngine from '../index.js';
+import runGameEngine from '../index.js';
 
 const task = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
 
-const getResultOfOperation = (operator, number1, number2) => {
+const calculate = (operator, number1, number2) => {
   switch (operator) {
     case '-': return number1 - number2;
     case '+': return number1 + number2;
@@ -19,8 +19,8 @@ const genGameData = () => {
   const operationIndex = getRandomNumber(0, operators.length - 1);
   const operator = operators[operationIndex];
   const question = `${firstNumber} ${operator} ${secondNumber}`;
-  const correctAnswer = getResultOfOperation(operator, firstNumber, secondNumber).toString();
+  const correctAnswer = calculate(operator, firstNumber, secondNumber).toString();
   return [question, correctAnswer];
 };
 
-export default () => gameEngine(genGameData, task);
+export default () => runGameEngine(genGameData, task);
