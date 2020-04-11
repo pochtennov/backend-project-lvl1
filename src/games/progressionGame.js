@@ -5,9 +5,9 @@ const maxDifference = 10;
 const progressionLength = 10;
 const task = 'What number is missing in the progression?';
 
-const generateProgression = (firstMember, progressionLength, difference) => {
+const generateProgression = (firstMember, progrLength, difference) => {
   const progression = [];
-  for (let i = 0; i < progressionLength; i += 1) {
+  for (let i = 0; i < progrLength; i += 1) {
     progression[i] = firstMember + difference * i;
   }
   return progression;
